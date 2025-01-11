@@ -6,6 +6,7 @@ public class CharacterMove : MonoBehaviour, IMove
 {
     public float Speed, SprintSpeed;
     private Rigidbody rb;
+    public Animator PlayerAnimator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,11 +28,18 @@ public class CharacterMove : MonoBehaviour, IMove
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            AnimatorManager.SetAllAnimatorBools(PlayerAnimator, "koþma");
             transform.position += MoveDir * SprintSpeed * Time.deltaTime;
         }
         else
         {
             transform.position += MoveDir * Speed * Time.deltaTime;
+            AnimatorManager.SetAllAnimatorBools(PlayerAnimator, "yürüme");
+        }
+
+        if (x == 0 && z == 0)
+        {
+            AnimatorManager.SetAllAnimatorBools(PlayerAnimator, "idle");
         }
     }
 }
