@@ -1,19 +1,24 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class CharacterMove : MonoBehaviour, IMove
 {
     public float Speed, SprintSpeed;
     private Rigidbody rb;
     public Animator PlayerAnimator;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public AudioSource walkAudioSource; 
+    public AudioClip walkSound; 
+
+    private bool isWalking = false; 
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        if (walkAudioSource != null && walkSound != null)
+        {
+            walkAudioSource.clip = walkSound; // Ses kaynaðýný ses dosyasý ile eþleþtirir
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move(Speed);
@@ -26,6 +31,7 @@ public class CharacterMove : MonoBehaviour, IMove
 
         Vector3 MoveDir = transform.right * x + transform.forward * z;
 
+        // Yavaþ yürüyüþ veya sprint için
         if (Input.GetKey(KeyCode.LeftShift))
         {
             AnimatorManager.SetAllAnimatorBools(PlayerAnimator, "koþma");
@@ -37,10 +43,23 @@ public class CharacterMove : MonoBehaviour, IMove
             AnimatorManager.SetAllAnimatorBools(PlayerAnimator, "yürüme");
         }
 
-        if (x == 0 && z == 0)
+        // Yürüyüþ kontrolü
+        if (x != 0 || z != 0) // Eðer karakter hareket ediyorsa
         {
+            if (!isWalking && walkAudioSource != null && !walkAudioSource.isPlaying)
+            {
+                walkAudioSource.Play(); // Yürüyüþ sesi çalar
+            }
+            isWalking = true;
+        }
+        else
+        {
+            if (isWalking && walkAudioSource != null && walkAudioSource.isPlaying)
+            {
+                walkAudioSource.Stop(); // Yürüyüþ sesini durdurur
+            }
+            isWalking = false;
             AnimatorManager.SetAllAnimatorBools(PlayerAnimator, "idle");
         }
     }
 }
-

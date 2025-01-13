@@ -1,26 +1,27 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ActivateTrap : MonoBehaviour
 {
     public Animator SpikeAnimator;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public AudioSource audioSource; 
+    private bool hasTriggered = false; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        // Eðer oyuncu tuzaða dokunduysa ve tuzak daha önce tetiklenmediyse
+        if (other.CompareTag("Player") && !hasTriggered)
         {
-            if(SpikeAnimator != null)
-            AnimatorManager.SetAllAnimatorBools(SpikeAnimator, "IsTriggered");
+            if (SpikeAnimator != null)
+            {
+                AnimatorManager.SetAllAnimatorBools(SpikeAnimator, "IsTriggered");
+            }
+
+            if (audioSource != null && !audioSource.isPlaying) 
+            {
+                audioSource.Play(); 
+            }
+
+            hasTriggered = true; 
         }
     }
 }
