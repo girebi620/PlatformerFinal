@@ -1,3 +1,5 @@
+//Oyuncunun hasar almasýný saðlar.
+
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;

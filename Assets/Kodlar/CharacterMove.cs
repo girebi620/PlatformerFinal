@@ -1,3 +1,5 @@
+//Karakteri hareket ettirir.
+
 using UnityEngine;
 
 public class CharacterMove : MonoBehaviour, IMove

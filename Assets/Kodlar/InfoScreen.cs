@@ -1,3 +1,5 @@
+//Oyun baþýnda oyuncuya bilgi veren bir panel açar, bu panel bir süre sonra kaybolur.
+
 using UnityEngine;
 using UnityEngine.UI;
 

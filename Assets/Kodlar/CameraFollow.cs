@@ -1,3 +1,5 @@
+//Üst kamerayý karaktere takip ettirir.
+
 using UnityEngine;
 using UnityEngine.UI;
 

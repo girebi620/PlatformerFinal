@@ -1,3 +1,5 @@
+//Kum saati toplandýðýnda zamaný arttýrýr.
+
 using UnityEngine;
 using UnityEngine.UI;
 

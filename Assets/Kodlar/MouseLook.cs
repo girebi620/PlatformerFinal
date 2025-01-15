@@ -1,3 +1,5 @@
+//Oyuncunun fare ile saða sola bakmasýný saðlar.
+
 using UnityEngine;
 using UnityEngine.UI;
 

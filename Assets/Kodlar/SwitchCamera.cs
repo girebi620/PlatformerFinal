@@ -1,3 +1,5 @@
+//Üst ve arka kamera arasýnda geçiþ yapar.
+
 using UnityEngine;
 using UnityEngine.UI;
 

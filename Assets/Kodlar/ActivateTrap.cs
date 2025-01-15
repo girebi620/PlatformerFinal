@@ -1,3 +1,5 @@
+//Tuzak oyuncu ile iç içe geçtiðinde tuzaðý aktifleþtirir.
+
 using UnityEngine;
 
 public class ActivateTrap : MonoBehaviour
