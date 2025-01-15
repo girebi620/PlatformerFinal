@@ -1,3 +1,4 @@
+//Bu script oyuncu varýþ yerine gelince ana menüye döndürür.
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,10 +9,10 @@ public class EndingCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Etkileþim kontrolü
+        // Etkileþim kontrolünü yapar
         if (other.CompareTag(playerTag))
         {
-            // Ana menü sahnesine geç
+            // Ana menü sahnesine geçer
             SceneManager.LoadScene(0);
         }
     }

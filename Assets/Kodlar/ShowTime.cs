@@ -1,3 +1,4 @@
+//Bu Script slider ile zamaný azaltmaya ve slider deðeri 0 olunca panel açýp ana menüye veya tekrar oynamasýna imkan verir
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;

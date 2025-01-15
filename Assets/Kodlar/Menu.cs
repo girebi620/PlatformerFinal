@@ -1,3 +1,4 @@
+//Menü ayarlarýný butonlarýný ve etkileþimleri ayarlar.
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;

@@ -10,7 +10,7 @@ public class ActivateTrap : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Eðer oyuncu tuzaða dokunduysa ve tuzak daha önce tetiklenmediyse
+        
         if (other.CompareTag("Player") && !hasTriggered)
         {
             if (SpikeAnimator != null)

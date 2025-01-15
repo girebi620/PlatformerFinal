@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class SwitchCamera : MonoBehaviour
 {
     public Camera cam1, cam2;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         SwitchCam();

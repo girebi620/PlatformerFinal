@@ -23,7 +23,7 @@ public static class AnimatorManager
             if (param.type == AnimatorControllerParameterType.Bool)
             {
                 bool targetValue = excludeSet.Contains(param.name);
-                if (animator.GetBool(param.name) != targetValue) // Sadece gerektiginde degistir
+                if (animator.GetBool(param.name) != targetValue) // Sadece gerektiginde degistirir
                 {
                     animator.SetBool(param.name, targetValue);
                 }

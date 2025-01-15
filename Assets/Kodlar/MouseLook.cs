@@ -7,13 +7,13 @@ public class MouseLook : MonoBehaviour
 {
     public GameObject Oyuncu;
     public float HorizontalSensitivity;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         Oyuncu = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         LookAround();
