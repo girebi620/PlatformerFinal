@@ -1,3 +1,5 @@
+//Hareket etmek için bir arayüz.
+
 using UnityEngine;
 using UnityEngine.UI;
 

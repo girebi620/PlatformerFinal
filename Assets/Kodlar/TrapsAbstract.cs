@@ -1,3 +1,5 @@
+//Zaman azaltmak için bir soyut sýnýf
+
 using UnityEngine;
 using UnityEngine.UI;
 
